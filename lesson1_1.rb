@@ -1,6 +1,8 @@
-puts "What is your name?"
+# frozen_string_literal: true
+
+puts 'What is your name?'
 name = gets.chomp
-puts "What is your height?"
+puts 'What is your height?'
 height = gets.chomp
 ideal_weight = height.to_i - 110
 if ideal_weight >= 0
