@@ -1,23 +1,23 @@
 # frozen_string_literal: true
 
-sides_of_triangle = []
+sides = []
 
 puts 'Enter first side of triangle'
 a = gets.chomp.to_f
-sides_of_triangle.push(a)
+sides.push(a)
 puts 'Enter second side of triangle'
 b = gets.chomp.to_f
-sides_of_triangle.push(b)
+sides.push(b)
 puts 'Enter third side of triangle'
 c = gets.chomp.to_f
-sides_of_triangle.push(c)
-sides_of_triangle.sort!
+sides.push(c)
+sides.sort!
 
-if sides_of_triangle.uniq.size == 1
+if sides.uniq.size == 1
   puts 'Your triangle is equilateral'
-elsif sides_of_triangle.uniq.size == 2
+elsif sides.uniq.size == 2
   puts 'Your triangle is isosceles'
-elsif sides_of_triangle[2]**2 == sides_of_triangle[0]**2 + sides_of_triangle[1]**2
+elsif sides[2]**2 == sides[0]**2 + sides[1]**2
   puts 'Your triangle is rectangular'
 else
   puts 'Your triangle is wrong'
