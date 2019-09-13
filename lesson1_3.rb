@@ -1,38 +1,24 @@
 # frozen_string_literal: true
 
-def sides(first, second, third)
-  if (first == second) && (second == third) && (third == first)
-    puts 'Your triangle is equilateral'
-  elsif (first == second) || (second == third) || (third == first)
-    puts 'Your triangle is isosceles'
-  end
-end
-
-def rectangular(first, second, third)
-  if first > second && first > third
-    max = first
-    cathet1 = second
-    cathet2 = third
-  elsif second > first && second > third
-    max = second
-    cathet1 = first
-    cathet2 = third
-  else
-    max = third
-    cathet1 = first
-    cathet2 = second
-  end
-  if max**2 == cathet1**2 + cathet2**2
-    puts 'Your triangle is rectangular'
-  end
-end
+sides_of_triangle = []
 
 puts 'Enter first side of triangle'
 a = gets.chomp.to_f
+sides_of_triangle.push(a)
 puts 'Enter second side of triangle'
 b = gets.chomp.to_f
+sides_of_triangle.push(b)
 puts 'Enter third side of triangle'
 c = gets.chomp.to_f
+sides_of_triangle.push(c)
+sides_of_triangle.sort!
 
-sides(a, b, c)
-rectangular(a, b, c)
+if sides_of_triangle.uniq.size == 1
+  puts 'Your triangle is equilateral'
+elsif sides_of_triangle.uniq.size == 2
+  puts 'Your triangle is isosceles'
+elsif sides_of_triangle[2]**2 == sides_of_triangle[0]**2 + sides_of_triangle[1]**2
+  puts 'Your triangle is rectangular'
+else
+  puts 'Your triangle is wrong'
+end
