@@ -3,8 +3,9 @@
 def quadratic(a, b, c)
   d = b**2 - 4 * a * c
   if d.positive?
-    x1 = (- b + Math.sqrt(d)) / (2 * a)
-    x2 = (- b - Math.sqrt(d)) / (2 * a)
+    dSqrt = Math.sqrt(d)
+    x1 = (- b + dSqrt) / (2 * a)
+    x2 = (- b - dSqrt) / (2 * a)
     puts "d = #{d}, x1 = #{x1}, x2 = #{x2}"
   elsif d.zero?
     x1 = - (b / (2 * a))
